@@ -56,9 +56,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 -   **weight**: weight of the baby at birth in pounds. (Regression problem)
 
-```{=html}
 <!-- -->
-```
+
 -   Predictors:
 
     -   Attributes like father's age (fage), mother's age (mage), pregnancy length in weeks (weeks), premature birth classification (premie), hospital visits during pregnancy (visits), weight gained during pregnancy (gained), and others.
