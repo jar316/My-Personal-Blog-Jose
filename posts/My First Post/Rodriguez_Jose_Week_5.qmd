@@ -1,0 +1,217 @@
+---
+title: "Linear Regression vs Generalized Additive Models"
+format: html
+author: "Jose A Rodriguez"
+editor: visual
+date: "2023-12-07"
+image: "image.jpg"
+categories: [Code, Analysis]
+---
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+library(tidyverse)
+library(dplyr)
+library(ggplot2)
+library(rpart)
+library(rsample)
+library(caret)
+library(mgcv)
+
+knitr::opts_chunk$set(echo = TRUE)
+
+
+
+```
+
+## Business Problem
+
+Our focus will be on examining the connection between the behaviors and routines of pregnant mothers and the outcomes of their childbirth. Please note, the dataset we'll be using is a randomly selected subset of the original dataset.
+
+**Attributes:**
+
+-   **Predictors**
+
+    -   **fage**: father's age in years.
+
+    -   **mage**: mother's age in years.
+
+    -   **mature**: maturity status of mother.
+
+    -   **weeks**: length of pregnancy in weeks.
+
+    -   **premie**: whether the birth was classified as premature (premie) or full-term.
+
+    -   **visits**: number of hospital visits during pregnancy.
+
+    -   **marital**: whether mother is married or not married at birth.
+
+    -   **gained**: weight gained by mother during pregnancy in pounds.
+
+    -   **gender**: gender of the baby, female or male.
+
+    -   **habit**: status of the mother as a nonsmoker or a smoker.
+
+    -   **whitemom**: whether mother is white or not white.
+
+**Outcome Variable:**
+
+-   **weight**: weight of the baby at birth in pounds. (Regression problem)
+
+#### 
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+# Run this code chunk without altering it
+# clear the session
+rm(list=ls())
+
+# Data is stored in a csv file, the first row contains the variable names. 
+# we call our data mydata
+mydata<-read.csv ("Data_RLab5.csv", header=TRUE)
+
+# remove lowbirthweight
+mydata<-mydata%>%
+  select(-lowbirthweight)
+
+
+
+
+```
+
+## 
+
+::: {.callout-important appearance="simple"}
+## 
+
+The correlation between 'weight' and all other variable varied and the strongest variable was 'weeks'. When the 'weeks' of pregnancy are longer, the baby's birth weight tends to be higher relationship is pretty strong ( 0.67). Also, it looks like the weight gained during pregnancy and how often someone goes to the doctor 'visits' might also have a small effect on the baby's birth weight.
+:::
+
+## 
+
+```{r, echo=TRUE}
+# Please provide your code for Task 1 in this code chunk
+
+#Data Structure Check
+str(mydata)
+
+numeric <- sapply(mydata, is.numeric)
+categorical <- sapply(mydata, is.factor)
+
+mydata[, numeric] <- lapply(mydata[, numeric], function(x) ifelse(is.na(x), median(x, na.rm = TRUE), x))
+
+Mode <- function(x) {
+  ux <- unique(x)
+  ux[which.max(tabulate(match(x, ux)))]
+}
+
+# Replace missing values in categorical columns with mode
+mydata[, categorical] <- lapply(mydata[, categorical], function(x) ifelse(is.na(x), Mode(x), x))
+
+
+numeric_vars <- sapply(mydata, is.numeric)
+
+cor_matrix_numeric <- cor(mydata[, numeric_vars])
+
+target_var <- "weight"  
+cor_with_target <- cor_matrix_numeric['weight', ]
+highest_correlation <- names(sort(abs(cor_with_target), decreasing = TRUE)[2])
+
+plot(mydata[[target_var]], mydata[[highest_correlation]],
+     xlab = target_var, ylab = highest_correlation,
+     main = paste("Scatter plot between", target_var, "and", highest_correlation))
+
+
+
+
+```
+
+## 
+
+```{r, echo=TRUE}
+# Please provide your code for Task 2 in this code chunk
+# split the sample by using rsample package
+
+# Split the data into a training set (70%) and a test set (30%)
+set.seed(123456)
+
+# Divide the dataset into a training set (70%) and a test set (30%) using stratified sampling
+split_data <- initial_split(mydata, prop = 0.7, strata = "weight")
+
+# Assign the training set and test set to variables
+train_data <- training(split_data)
+test_data <- testing(split_data)
+```
+
+## 
+
+```{r, echo=TRUE}
+# Please provide your code for Task 3  in this code chunk
+
+linearmodel <- lm(weight ~ ., data = train_data)
+
+predicted_weights_ols <- predict(linearmodel, newdata = test_data)
+
+
+MSPE_linear <- mean((predicted_weights_ols - as.numeric(test_data$weight))^2, na.rm = TRUE)
+
+print(MSPE_linear)
+
+```
+
+## 
+
+::: {.callout-important appearance="simple"}
+```         
+1.107573
+```
+:::
+
+## 
+
+```{r, echo=TRUE}
+# Please provide your code for Task 4 in this code chunk
+
+# Fit a Generalized Additive Model (GAM) on train_data using gam()
+# Assuming suitable predictors are 'predictor1', 'predictor2', etc. Update these names based on your dataset.
+gam_model <- gam(weight ~ s(weeks) + s(visits)  + habit + gender, data = train_data, method = "REML")
+
+# Print smoothing parameters from gam_model
+summary(gam_model)
+
+# Predict weight variable in the test_data dataset using gam_model
+predicted_weights_gam <- predict(gam_model, newdata = test_data)
+
+# Calculate mean squared prediction error (MSPE) by comparing predicted values with actual values
+MSPE_gam <- mean((predicted_weights_gam - test_data$weight)^2)
+
+# Print the value of MSPE_gam to the console
+print(MSPE_gam)
+
+
+```
+
+------------------------------------------------------------------------
+
+## 
+
+::: {.callout-important appearance="simple"}
+Using the **`gam_model provided the lowest MSPE of 1.108`**
+:::
+
+## 
+
+```{r, echo=TRUE}
+# Please provide your code for Task 5 in this code chunk
+
+print(MSPE_linear)
+
+print(MSPE_gam)
+
+
+
+
+
+
+
+
+```
