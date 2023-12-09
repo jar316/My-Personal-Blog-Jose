@@ -6,8 +6,21 @@ editor: visual
 date: "2023-12-08"
 image: "image.jpg"
 categories: [Code, Analysis]
+website:
+  navbar:
+    left: 
+      - text: "Home"
+        file: about.qmd
+      - text: "Blog"
+        file: index.qmd
+      - text: "Resume"
+        file: Resume2023.docx.pdf
+    right:
+      - about.qmd
       - icon: github
         href: https://github.com/jar316
+      - icon: linkedin
+        href: https://www.linkedin.com/in/jose-a-rodriguez-735195123/
 ---
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
