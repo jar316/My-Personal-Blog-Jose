@@ -14,11 +14,11 @@
     "text": "Attributes:\n\nPredictors\n\nfage: father’s age in years.\nmage: mother’s age in years.\nmature: maturity status of mother.\nweeks: length of pregnancy in weeks.\npremie: whether the birth was classified as premature (premie) or full-term.\nvisits: number of hospital visits during pregnancy.\nmarital: whether mother is married or not married at birth.\ngained: weight gained by mother during pregnancy in pounds.\ngender: gender of the baby, female or male.\nhabit: status of the mother as a nonsmoker or a smoker.\nwhitemom: whether mother is white or not white.\n\n\nOutcome Variable:\n\nweight: weight of the baby at birth in pounds. (Regression problem)\n\n\n\nPredictors:\n\nAttributes like father’s age (fage), mother’s age (mage), pregnancy length in weeks (weeks), premature birth classification (premie), hospital visits during pregnancy (visits), weight gained during pregnancy (gained), and others.\n\nOutcome Variable:\n\nBaby’s birth weight in pounds (weight)."
   },
   {
-    "objectID": "posts/My First Post/Rodriguez_Jose_Week_5.html#business-problem",
-    "href": "posts/My First Post/Rodriguez_Jose_Week_5.html#business-problem",
+    "objectID": "posts/My First Post/Rodriguez_Jose_Week_5.html#the-business-problem-focuses-on-exploring-the-relationship-between-pregnant-mothers-behaviors-and-childbirth-outcomes-using-a-dataset-containing-various-predictors-and-the-babys-birth-weight-as-the-outcome-variable.",
+    "href": "posts/My First Post/Rodriguez_Jose_Week_5.html#the-business-problem-focuses-on-exploring-the-relationship-between-pregnant-mothers-behaviors-and-childbirth-outcomes-using-a-dataset-containing-various-predictors-and-the-babys-birth-weight-as-the-outcome-variable.",
     "title": "Linear Regression vs Generalized Additive Models",
     "section": "",
-    "text": "Our focus will be on examining the connection between the behaviors and routines of pregnant mothers and the outcomes of their childbirth. Please note, the dataset we’ll be using is a randomly selected subset of the original dataset.\nAttributes:\n\nPredictors\n\nfage: father’s age in years.\nmage: mother’s age in years.\nmature: maturity status of mother.\nweeks: length of pregnancy in weeks.\npremie: whether the birth was classified as premature (premie) or full-term.\nvisits: number of hospital visits during pregnancy.\nmarital: whether mother is married or not married at birth.\ngained: weight gained by mother during pregnancy in pounds.\ngender: gender of the baby, female or male.\nhabit: status of the mother as a nonsmoker or a smoker.\nwhitemom: whether mother is white or not white.\n\n\nOutcome Variable:\n\nweight: weight of the baby at birth in pounds. (Regression problem)"
+    "text": "Attributes:\n\nPredictors\n\nfage: father’s age in years.\nmage: mother’s age in years.\nmature: maturity status of mother.\nweeks: length of pregnancy in weeks.\npremie: whether the birth was classified as premature (premie) or full-term.\nvisits: number of hospital visits during pregnancy.\nmarital: whether mother is married or not married at birth.\ngained: weight gained by mother during pregnancy in pounds.\ngender: gender of the baby, female or male.\nhabit: status of the mother as a nonsmoker or a smoker.\nwhitemom: whether mother is white or not white.\n\n\nOutcome Variable:\n\nweight: weight of the baby at birth in pounds. (Regression problem)\n\n\n\nPredictors:\n\nAttributes like father’s age (fage), mother’s age (mage), pregnancy length in weeks (weeks), premature birth classification (premie), hospital visits during pregnancy (visits), weight gained during pregnancy (gained), and others.\n\nOutcome Variable:\n\nBaby’s birth weight in pounds (weight)."
   },
   {
     "objectID": "posts/My First Post/Rodriguez_Jose_Week_5.html#section-1",
@@ -70,11 +70,11 @@
     "text": "Using the gam_model provided the lowest MSPE of 1.108"
   },
   {
-    "objectID": "posts/My First Post/Rodriguez_Jose_Week_5.html#section-9",
-    "href": "posts/My First Post/Rodriguez_Jose_Week_5.html#section-9",
+    "objectID": "posts/My First Post/Rodriguez_Jose_Week_5.html#key-insights",
+    "href": "posts/My First Post/Rodriguez_Jose_Week_5.html#key-insights",
     "title": "Linear Regression vs Generalized Additive Models",
-    "section": "",
-    "text": "# Please provide your code for Task 5 in this code chunk\n\nprint(MSPE_linear)\n\n[1] 1.134988\n\nprint(MSPE_gam)\n\n[1] 1.107573"
+    "section": "Key Insights:",
+    "text": "Key Insights:\n\nThe dataset analysis revealed a strong correlation (0.67) between pregnancy length (‘weeks’) and the baby’s birth weight. Longer pregnancies tended to result in higher birth weights.\nWeight gained during pregnancy and frequency of hospital visits (‘visits’) showed smaller effects on birth weight.\n\n\n# Please provide your code for Task 5 in this code chunk\n\nprint(MSPE_linear)\n\n[1] 1.134988\n\nprint(MSPE_gam)\n\n[1] 1.107573\n\n\nOverall, the analysis highlights the significance of pregnancy duration (‘weeks’) and provides insights into factors affecting the baby’s birth weight, with the GAM model showing promising predictive performance compared to the Linear Regression model."
   },
   {
     "objectID": "posts/Test/Mini_Project_Informs_Team_10.html",
@@ -96,19 +96,5 @@
     "title": "Jose A Rodriguez",
     "section": "",
     "text": "Linear Regression vs Generalized Additive Models\n\n\n\n\n\n\n\nCode\n\n\nAnalysis\n\n\n\n\n\n\n\n\n\n\n\nDec 8, 2023\n\n\nJose A Rodriguez\n\n\n\n\n\n\n  \n\n\n\n\nMini Project Informs Data Challenge\n\n\n\n\n\n\n\nCode\n\n\nAnalysis\n\n\n\n\n\n\n\n\n\n\n\nDec 7, 2023\n\n\nJose A Rodriguez\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/My First Post/Rodriguez_Jose_Week_5.html#the-business-problem-focuses-on-exploring-the-relationship-between-pregnant-mothers-behaviors-and-childbirth-outcomes-using-a-dataset-containing-various-predictors-and-the-babys-birth-weight-as-the-outcome-variable.",
-    "href": "posts/My First Post/Rodriguez_Jose_Week_5.html#the-business-problem-focuses-on-exploring-the-relationship-between-pregnant-mothers-behaviors-and-childbirth-outcomes-using-a-dataset-containing-various-predictors-and-the-babys-birth-weight-as-the-outcome-variable.",
-    "title": "Linear Regression vs Generalized Additive Models",
-    "section": "",
-    "text": "Attributes:\n\nPredictors\n\nfage: father’s age in years.\nmage: mother’s age in years.\nmature: maturity status of mother.\nweeks: length of pregnancy in weeks.\npremie: whether the birth was classified as premature (premie) or full-term.\nvisits: number of hospital visits during pregnancy.\nmarital: whether mother is married or not married at birth.\ngained: weight gained by mother during pregnancy in pounds.\ngender: gender of the baby, female or male.\nhabit: status of the mother as a nonsmoker or a smoker.\nwhitemom: whether mother is white or not white.\n\n\nOutcome Variable:\n\nweight: weight of the baby at birth in pounds. (Regression problem)\n\n\n\nPredictors:\n\nAttributes like father’s age (fage), mother’s age (mage), pregnancy length in weeks (weeks), premature birth classification (premie), hospital visits during pregnancy (visits), weight gained during pregnancy (gained), and others.\n\nOutcome Variable:\n\nBaby’s birth weight in pounds (weight)."
-  },
-  {
-    "objectID": "posts/My First Post/Rodriguez_Jose_Week_5.html#key-insights",
-    "href": "posts/My First Post/Rodriguez_Jose_Week_5.html#key-insights",
-    "title": "Linear Regression vs Generalized Additive Models",
-    "section": "Key Insights:",
-    "text": "Key Insights:\n\nThe dataset analysis revealed a strong correlation (0.67) between pregnancy length (‘weeks’) and the baby’s birth weight. Longer pregnancies tended to result in higher birth weights.\nWeight gained during pregnancy and frequency of hospital visits (‘visits’) showed smaller effects on birth weight.\n\n\n# Please provide your code for Task 5 in this code chunk\n\nprint(MSPE_linear)\n\n[1] 1.134988\n\nprint(MSPE_gam)\n\n[1] 1.107573\n\n\nOverall, the analysis highlights the significance of pregnancy duration (‘weeks’) and provides insights into factors affecting the baby’s birth weight, with the GAM model showing promising predictive performance compared to the Linear Regression model."
   }
 ]

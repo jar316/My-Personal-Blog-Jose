@@ -13,7 +13,7 @@ website:
     right:
       - about.qmd
       - icon: github
-        href: https://github.com/
+        href: https://github.com/jar316
       - icon: linkedin
         href: https://www.linkedin.com/in/jose-a-rodriguez-735195123/
 format:
