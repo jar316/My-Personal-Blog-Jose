@@ -6,6 +6,8 @@ editor: visual
 date: "2023-12-08"
 image: "image.jpg"
 categories: [Code, Analysis]
+      - icon: github
+        href: https://github.com/jar316
 ---
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
