@@ -3,7 +3,7 @@ title: "Linear Regression vs Generalized Additive Models"
 format: html
 author: "Jose A Rodriguez"
 editor: visual
-date: "2023-12-07"
+date: "2023-12-08"
 image: "image.jpg"
 categories: [Code, Analysis]
 ---
@@ -24,9 +24,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```
 
-## Business Problem
-
-Our focus will be on examining the connection between the behaviors and routines of pregnant mothers and the outcomes of their childbirth. Please note, the dataset we'll be using is a randomly selected subset of the original dataset.
+## The business problem focuses on exploring the relationship between pregnant mothers' behaviors and childbirth outcomes using a dataset containing various predictors and the baby's birth weight as the outcome variable.
 
 **Attributes:**
 
@@ -57,6 +55,17 @@ Our focus will be on examining the connection between the behaviors and routines
 **Outcome Variable:**
 
 -   **weight**: weight of the baby at birth in pounds. (Regression problem)
+
+```{=html}
+<!-- -->
+```
+-   Predictors:
+
+    -   Attributes like father's age (fage), mother's age (mage), pregnancy length in weeks (weeks), premature birth classification (premie), hospital visits during pregnancy (visits), weight gained during pregnancy (gained), and others.
+
+-   Outcome Variable:
+
+    -   Baby's birth weight in pounds (weight).
 
 #### 
 
@@ -198,7 +207,11 @@ print(MSPE_gam)
 Using the **`gam_model provided the lowest MSPE of 1.108`**
 :::
 
-## 
+## Key Insights:
+
+-   The dataset analysis revealed a strong correlation (0.67) between pregnancy length ('weeks') and the baby's birth weight. Longer pregnancies tended to result in higher birth weights.
+
+-   Weight gained during pregnancy and frequency of hospital visits ('visits') showed smaller effects on birth weight.
 
 ```{r, echo=TRUE}
 # Please provide your code for Task 5 in this code chunk
@@ -215,3 +228,5 @@ print(MSPE_gam)
 
 
 ```
+
+Overall, the analysis highlights the significance of pregnancy duration ('weeks') and provides insights into factors affecting the baby's birth weight, with the GAM model showing promising predictive performance compared to the Linear Regression model.
