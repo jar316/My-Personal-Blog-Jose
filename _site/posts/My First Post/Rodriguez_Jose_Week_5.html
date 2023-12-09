@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jose A Rodriguez">
-<meta name="dcterms.date" content="2023-12-07">
+<meta name="dcterms.date" content="2023-12-08">
 
 <title>Linear Regression vs Generalized Additive Models</title>
 <style>
@@ -172,7 +172,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">December 7, 2023</p>
+        <p class="date">December 8, 2023</p>
       </div>
     </div>
     
@@ -190,9 +190,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="business-problem" class="level2">
-<h2 class="anchored" data-anchor-id="business-problem">Business Problem</h2>
-<p>Our focus will be on examining the connection between the behaviors and routines of pregnant mothers and the outcomes of their childbirth. Please note, the dataset we’ll be using is a randomly selected subset of the original dataset.</p>
+<section id="the-business-problem-focuses-on-exploring-the-relationship-between-pregnant-mothers-behaviors-and-childbirth-outcomes-using-a-dataset-containing-various-predictors-and-the-babys-birth-weight-as-the-outcome-variable." class="level2">
+<h2 class="anchored" data-anchor-id="the-business-problem-focuses-on-exploring-the-relationship-between-pregnant-mothers-behaviors-and-childbirth-outcomes-using-a-dataset-containing-various-predictors-and-the-babys-birth-weight-as-the-outcome-variable.">The business problem focuses on exploring the relationship between pregnant mothers’ behaviors and childbirth outcomes using a dataset containing various predictors and the baby’s birth weight as the outcome variable.</h2>
 <p><strong>Attributes:</strong></p>
 <ul>
 <li><p><strong>Predictors</strong></p>
@@ -213,6 +212,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Outcome Variable:</strong></p>
 <ul>
 <li><strong>weight</strong>: weight of the baby at birth in pounds. (Regression problem)</li>
+</ul>
+<!-- -->
+<ul>
+<li><p>Predictors:</p>
+<ul>
+<li>Attributes like father’s age (fage), mother’s age (mage), pregnancy length in weeks (weeks), premature birth classification (premie), hospital visits during pregnancy (visits), weight gained during pregnancy (gained), and others.</li>
+</ul></li>
+<li><p>Outcome Variable:</p>
+<ul>
+<li>Baby’s birth weight in pounds (weight).</li>
+</ul></li>
 </ul>
 <section id="section" class="level4">
 <h4 class="anchored" data-anchor-id="section"></h4>
@@ -398,8 +408,12 @@ R-sq.(adj) =  0.539   Deviance explained = 54.7%
 </div>
 </div>
 </section>
-<section id="section-9" class="level2">
-<h2 class="anchored" data-anchor-id="section-9"></h2>
+<section id="key-insights" class="level2">
+<h2 class="anchored" data-anchor-id="key-insights">Key Insights:</h2>
+<ul>
+<li><p>The dataset analysis revealed a strong correlation (0.67) between pregnancy length (‘weeks’) and the baby’s birth weight. Longer pregnancies tended to result in higher birth weights.</p></li>
+<li><p>Weight gained during pregnancy and frequency of hospital visits (‘visits’) showed smaller effects on birth weight.</p></li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Please provide your code for Task 5 in this code chunk</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -412,6 +426,7 @@ R-sq.(adj) =  0.539   Deviance explained = 54.7%
 <pre><code>[1] 1.107573</code></pre>
 </div>
 </div>
+<p>Overall, the analysis highlights the significance of pregnancy duration (‘weeks’) and provides insights into factors affecting the baby’s birth weight, with the GAM model showing promising predictive performance compared to the Linear Regression model.</p>
 
 
 </section>
