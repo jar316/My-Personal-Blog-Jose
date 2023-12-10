@@ -12,7 +12,7 @@ about:
       href: https://github.com/jar316
 ---
 
-Jose A. Rodriguez is currently pursuing a Master's in Advanced Data Analytics at the University of North Texas, having previously obtained a Bachelor's in Data Analytics from Southern New Hampshire University. With over a decade of experience in the telecommunications and media industry, I transitioned into a role as a business analyst in 2020. After nearly two years, I progressed into the field of data analytics. I have since held the position of Senior Data Analyst for a year .
+Jose A. Rodriguez is currently pursuing a Master's in Advanced Data Analytics at the University of North Texas, having previously obtained a Bachelor's in Data Analytics from Southern New Hampshire University. With over a decade of experience in the telecommunications and media industry, I transitioned into a role as a business analyst in 2020. After nearly two years, I progressed into the field of data analytics. I have since held the position of Senior Data Analyst for a year.
 
 Utilized ad hoc analysis and Tableau dashboards to visualize outbound retention data, offering insights into product and service performance. Conducted comprehensive statistical analysis, including survival and T-test analyses, to identify trends crucial for strategic decision-making.
 
