@@ -18,7 +18,7 @@ website:
         href: https://www.linkedin.com/in/jose-a-rodriguez-735195123/
 format:
   html:
-    theme: yeti
+    theme: darkly
     css: styles.css
 
 editor: visual
